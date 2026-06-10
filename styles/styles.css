@@ -1,0 +1,500 @@
+:root {
+  --titleFont: "Space Grotesk", sans-serif;
+  --bodyFont: "Roboto", sans-serif;
+
+  --primaryColor: #0d1b2a;
+  --secondaryColor: #14b8a6;
+  --secondaryColor-hover: #159e8e;
+  --optionalColor: #122232;
+  --darkGray: #334155;
+  --lightGray: #f1f5f9;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/** RESET **/
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/** GLOBALS **/
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--bodyFont);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titleFont);
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--lightGray);
+}
+
+ul {
+  list-style: none;
+}
+
+/** UTILITIES **/
+.active {
+  color: var(--secondaryColor);
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.subtitulo {
+  font-size: 3rem;
+  position: relative;
+}
+
+.subtitulo::after {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 4px;
+  background-color: var(--secondaryColor);
+  margin: 1rem auto 0;
+}
+
+.titulo {
+  color: var(--secondaryColor);
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 1.5rem 3rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: var(--secondaryColor);
+  color: var(--lightGray);
+}
+@media (min-width: 1024px) {
+  .btn-primary:hover {
+    background-color: var(--secondaryColor-hover);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--primaryColor);
+  border: 0.1rem solid var(--lightGray);
+  color: var(--lightGray);
+}
+@media (min-width: 1024px) {
+  .btn-secondary:hover {
+    background-color: var(--lightGray);
+    border-color: var(--black);
+    color: var(--black);
+  }
+}
+
+/** PRINCIPAL NAVIGATION **/
+.principal-navigation {
+  background-color: var(--primaryColor);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.navigation-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-logo-img img {
+  width: 13rem;
+  height: auto;
+  padding: 2rem 0;
+}
+@media (min-width: 1024px) {
+  .navigation-logo-img img {
+    width: 10rem;
+    transition: transform ease 0.3s;
+  }
+
+  .navigation-logo-img img:hover {
+    transform: scale(1.15);
+  }
+}
+
+.navigation-logo-text {
+  color: var(--lightGray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navigation-logo-text p {
+  margin: 0;
+}
+
+.navigation-logo-text p:nth-child(1) {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (min-width: 1024px) {
+  .navigation-logo-text p:nth-child(1) {
+    font-size: 2rem;
+  }
+}
+
+.navigation-logo-text p:nth-child(2) {
+  font-size: 2rem;
+  font-weight: 200;
+}
+@media (min-width: 1024px) {
+  .navigation-logo-text p:nth-child(2) {
+    font-size: 1.5rem;
+  }
+}
+
+.navigation-anchors {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .navigation-anchors {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+.navigation-anchors a {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 2rem 0;
+  transition: color 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .navigation-anchors a {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+  }
+
+  .navigation-anchors a:not(:last-child):hover {
+    color: var(--secondaryColor);
+  }
+}
+
+@media (min-width: 1024px) {
+  .navigation-anchors .nav-btn {
+    background-color: var(--secondaryColor);
+    padding: 1.5rem 3rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .navigation-anchors .nav-btn:hover {
+    background-color: var(--secondaryColor-hover);
+  }
+}
+
+.navigation-anchors a:nth-child(1) {
+  background-color: var(--optionalColor);
+}
+@media (min-width: 1024px) {
+  .navigation-anchors a:nth-child(1) {
+    background-color: transparent;
+    border-bottom: 0.5rem solid var(--secondaryColor);
+  }
+}
+
+/** HEADER **/
+.header {
+  background-image: url(../img/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 40rem;
+  color: var(--lightGray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+@media (min-width: 1024px) {
+  .header {
+    min-height: 85rem;
+    padding: 3rem 10rem;
+  }
+}
+
+.header-text {
+  padding: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .header-text {
+    padding: 2.5rem 0;
+    text-align: left;
+  }
+}
+
+.header-text h1 {
+  font-size: 4.5rem;
+}
+@media (min-width: 768px) {
+  .header-text h1 {
+    font-size: 5.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header-text h1 {
+    font-size: 6.5rem;
+  }
+}
+
+.header-text p {
+  font-size: 2rem;
+  font-weight: 200;
+}
+@media (min-width: 768px) {
+  .header-text p {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header-text p {
+    font-size: 2.6rem;
+  }
+}
+
+.header-text h1 span {
+  color: var(--secondaryColor);
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .header-buttons {
+    justify-content: flex-start;
+    font-size: 2rem;
+  }
+}
+
+.header-buttons a {
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 1024px) {
+  .header-buttons a {
+    padding: 1.5rem 3rem;
+  }
+}
+
+/** SERVICES **/
+.services {
+  padding: 5rem;
+  text-align: center;
+}
+
+.grid-services {
+  display: grid;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .grid-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-services {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.service {
+  padding: 1.5rem;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .service:hover {
+    transform: scale(1.1);
+  }
+}
+
+.service h4 {
+  font-size: 2.3rem;
+  margin: 1rem 0;
+}
+
+/** ABOUT ME **/
+.about-me {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightGray);
+  text-align: center;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .about-me {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.about-me-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-me-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 70rem;
+}
+
+.about-me-text h2 {
+  font-size: 2.5rem;
+}
+@media (min-width: 1920px) {
+  .about-me-text h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .about-me-text p {
+    font-size: 2.5rem;
+  }
+}
+
+.about-me-buttons {
+  margin-top: 1rem;
+}
+@media (min-width: 1920px) {
+  .about-me-buttons {
+    font-size: 2.5rem;
+  }
+}
+
+/** PROYECTS **/
+.proyects {
+  padding: 4rem 0;
+}
+
+.flex-proyects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .flex-proyects {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.proyect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .proyect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.proyect img {
+  width: 100%;
+  max-width: 28rem;
+  height: 15rem;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 1440px) {
+  .proyect img {
+    height: 20rem;
+    max-width: 38rem;
+  }
+}
+
+.proyect p {
+  margin: 0.5rem 0;
+}
+
+.proyect .proyect-title {
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+@media (min-width: 1440px) {
+  .proyect .proyect-title {
+    font-size: 2.5rem;
+  }
+}
+
+.proyect .proyect-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 1440px) {
+  .proyect .proyect-subtitle {
+    font-size: 2rem;
+  }
+}
+
+.proyect a {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
